@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WolfsKnittingHubController {
 
-    @GetMapping("/pattern")
+    @GetMapping("/message")
     public String getPattern() {
-        return "knitting pattern loaded";
+        return "knitting patterns library";
     }
 }
