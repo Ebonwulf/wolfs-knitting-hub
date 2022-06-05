@@ -31,8 +31,8 @@ public class PatternController {
 
     @DeleteMapping("/pattern/{patternId}")
     @Transactional
-    public String deletePokemon(@PathVariable int patternId) {
-        System.out.println("pokemon = " + patternId);
+    public String deletePattern(@PathVariable int patternId) {
+        System.out.println("pattern = " + patternId);
         int deleted = this.patternRepository.deletePatternByPatternId(patternId);
         if (deleted > 0) {
             return "Pattern removed";
