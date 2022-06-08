@@ -1,26 +1,33 @@
 package com.nology.wolfsknittinghubbackend;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins  = {"http://localhost:3000"} )
 public class PatternController {
 
     @Autowired
     PatternRepository patternRepository;
 
     @GetMapping("/pattern")
-    public String getPattern() {
-        return "getting pattern";
+    public String getPattern(@PathVariable String patternName) {
+//      return patternRepository.findBy(patternName);
+        return patternName;
     }
 
+
     @GetMapping("/patterns")
-    public List<Pattern> getPatterns() {
-       return patternRepository.findAll();
+    public ResponseEntity<List<Pattern>>  getPatterns() {
+       List<Pattern> listOfPatterns = this.patternRepository.findAll();
+       return ResponseEntity.status(HttpStatus.ACCEPTED).body(listOfPatterns);
     }
+
 
     @PostMapping("/pattern")
     public String addPattern(@RequestBody Pattern text) {
