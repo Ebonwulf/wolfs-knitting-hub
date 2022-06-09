@@ -1,9 +1,6 @@
 package com.nology.wolfsknittinghubbackend;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Pattern {
@@ -17,6 +14,7 @@ public class Pattern {
     private String woolType;
     private String needleSize;
     private String patternDescription;
+    @Column(length = 3000)
     private String pattern;
 
     public Pattern() {}
