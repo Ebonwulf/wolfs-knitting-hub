@@ -17,7 +17,6 @@ public class PatternController {
 
     @GetMapping("/pattern")
     public String getPattern(@PathVariable String patternName) {
-//      return patternRepository.findBy(patternName);
         return patternName;
     }
 
