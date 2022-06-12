@@ -19,18 +19,6 @@ public class Pattern {
 
     public Pattern() {}
 
-//    public Pattern(int patternId, String patternName, String patternType,
-//                   String patternDifficulty, String woolType,
-//                   String needleSize, String patternDescription) {
-//        this.patternId = patternId;
-//        this.patternName = patternName;
-//        this.patternType = patternType;
-//        this.patternDifficulty = patternDifficulty;
-//        this.woolType = woolType;
-//        this.needleSize = needleSize;
-//        this.patternDescription = patternDescription;
-//    }
-
     public int getPatternId() {
         return patternId;
     }
