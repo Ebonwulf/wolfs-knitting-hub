@@ -9,33 +9,33 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins  = {"https://wolfs-knitting-hub-5h356xxfoq-nw.a.run.app/"} )
+@CrossOrigin(origins  = {"https://wolfs-knitting-hub-5h356xxfoq-nw.a.run.app"} )
 public class PatternController {
 
     @Autowired
     PatternRepository patternRepository;
 
-    @GetMapping("/pattern")
+    @GetMapping("/knitting-hub-frontend/pattern")
     public String getPattern(@PathVariable String patternName) {
         return patternName;
     }
 
 
-    @GetMapping("/patterns")
+    @GetMapping("/knitting-hub-frontend/patterns")
     public ResponseEntity<List<Pattern>>  getPatterns() {
        List<Pattern> listOfPatterns = this.patternRepository.findAll();
        return ResponseEntity.status(HttpStatus.ACCEPTED).body(listOfPatterns);
     }
 
 
-    @PostMapping("/pattern")
+    @PostMapping("/knitting-hub-frontend/pattern")
     public String addPattern(@RequestBody Pattern text) {
         this.patternRepository.save(text);
         return "Pattern saved";
 
     }
 
-    @DeleteMapping("/pattern/{patternId}")
+    @DeleteMapping("/knitting-hub-frontend/pattern/{patternId}")
     @Transactional
     public String deletePattern(@PathVariable int patternId) {
         System.out.println("pattern = " + patternId);

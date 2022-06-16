@@ -14,7 +14,7 @@ public class Pattern {
     private String woolType;
     private String needleSize;
     private String patternDescription;
-    @Column(length = 3000)
+    @Column(length = 10000)
     private String pattern;
 
     public Pattern() {}
