@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins  = {"https://wolfs-knitting-hub-5h356xxfoq-nw.a.run.app", "https://ebonwulf.github.io", "https://localhost:3000"} )
+@CrossOrigin(origins  = {"https://wolfs-knitting-hub-5h356xxfoq-nw.a.run.app", "https://ebonwulf.github.io", "http://localhost:3000"} )
 public class PatternController {
 
     @Autowired
