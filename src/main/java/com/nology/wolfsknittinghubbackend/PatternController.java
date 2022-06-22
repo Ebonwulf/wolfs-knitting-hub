@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins  = {"https://wolfs-knitting-hub-5h356xxfoq-nw.a.run.app", "https://ebonwulf.github.io/"} )
+@CrossOrigin(origins  = {"https://wolfs-knitting-hub-5h356xxfoq-nw.a.run.app", "https://ebonwulf.github.io", "https://localhost:3000"} )
 public class PatternController {
 
     @Autowired
@@ -44,5 +44,11 @@ public class PatternController {
             return "Pattern removed";
         }
         return "Pattern Id doesn't exist";
+    }
+
+    @PutMapping("/knitting-hub-frontend/pattern/update/{patternId}")
+    public String updatePattern(@RequestBody Pattern text, @PathVariable int patternId) {
+        this.patternRepository.save(text);
+        return "Pattern updated";
     }
 }
