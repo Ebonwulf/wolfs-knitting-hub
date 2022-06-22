@@ -9,31 +9,31 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins  = {"https://wolfs-knitting-hub-5h356xxfoq-nw.a.run.app/", "https://ebonwulf.github.io", "http://localhost:3000"} )
+@CrossOrigin(origins  = {"https://wolfs-knitting-hub-5h356xxfoq-nw.a.run.app", "https://ebonwulf.github.io", "http://localhost:3000"} )
 public class BookController {
 
     @Autowired
     BookRepository bookRepository;
 
-    @GetMapping("/book")
+    @GetMapping("/knitting-hub-frontend/book")
     public String getBook(@PathVariable String bookTitle) {
         return bookTitle;
     }
 
-    @GetMapping("/books")
+    @GetMapping("/knitting-hub-frontend/books")
     public ResponseEntity<List<Book>> getBooks() {
         List<Book> listOfBooks = this.bookRepository.findAll();
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(listOfBooks);
     }
 
-    @PostMapping("/book")
+    @PostMapping("/knitting-hub-frontend/book")
     public String addBook(@RequestBody Book text) {
         this.bookRepository.save(text);
         return "Book saved";
 
     }
 
-    @DeleteMapping("/book/{bookId}")
+    @DeleteMapping("/knitting-hub-frontend/book/{bookId}")
     @Transactional
     public String deleteBook(@PathVariable int bookId) {
         System.out.println("book = " + bookId);
