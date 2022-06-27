@@ -14,7 +14,7 @@ public class Book {
     private String bookDescription;
     private String bookAuthor;
 
-    @Column(length = 5000)
+    @Column(length = 9000)
     private String bookBlurb;
 
     public Book() {}
