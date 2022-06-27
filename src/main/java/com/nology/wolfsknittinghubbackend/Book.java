@@ -14,7 +14,18 @@ public class Book {
     private String bookDescription;
     private String bookAuthor;
 
+    @Column(length = 5000)
+    private String bookBlurb;
+
     public Book() {}
+
+    public String getBookBlurb() {
+        return bookBlurb;
+    }
+
+    public void setBookBlurb(String bookBlurb) {
+        this.bookBlurb = bookBlurb;
+    }
 
     public int getBookId() {
         return bookId;
