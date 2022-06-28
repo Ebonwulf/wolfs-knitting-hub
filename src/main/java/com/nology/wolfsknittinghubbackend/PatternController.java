@@ -46,7 +46,7 @@ public class PatternController {
         return "Pattern Id doesn't exist";
     }
 
-    @PutMapping("/knitting-hub-frontend/patterns/{patternId}")
+    @PutMapping("/knitting-hub-frontend/pattern/{patternId}")
     public String updatePattern(@RequestBody Pattern text, @PathVariable int patternId) {
         this.patternRepository.save(text);
         System.out.println("pattern = " + patternId);

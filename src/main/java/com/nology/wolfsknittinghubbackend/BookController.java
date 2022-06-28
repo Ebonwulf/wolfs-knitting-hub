@@ -44,7 +44,7 @@ public class BookController {
         return "Book Id doesn't exist";
     }
 
-    @PutMapping("/knitting-hub-frontend/books/{bookId}")
+    @PutMapping("/knitting-hub-frontend/book/{bookId}")
     public String updateBook(@RequestBody Book text, @PathVariable int bookId) {
         this.bookRepository.save(text);
         System.out.println("book = " + bookId);
