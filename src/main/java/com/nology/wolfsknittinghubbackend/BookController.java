@@ -4,7 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
+import javax.lang.model.util.Elements;
+import javax.persistence.Access;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -44,7 +50,7 @@ public class BookController {
         return "Book Id doesn't exist";
     }
 
-    @PutMapping("/knitting-hub-frontend/book/{bookId}")
+    @PutMapping("/knitting-hub-frontend/books/{bookId}")
     public String updateBook(@RequestBody Book text, @PathVariable int bookId) {
         this.bookRepository.save(text);
         System.out.println("book = " + bookId);
